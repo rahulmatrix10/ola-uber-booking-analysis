@@ -1,57 +1,26 @@
 # Ola/Uber Ride Booking Analysis
 
-## Project Overview
-This project uses MySQL and Power BI to analyse ride-booking outcomes, time trends, cancellations, vehicle and location patterns, recorded booking value, payment methods, ratings, turnaround-time fields, and repeat bookings.
+SQL analysis of 103,024 ride bookings to find where the platform is losing rides (cancellations, driver mismatches) and why.
 
-## Business Problem
-The analysis explores how bookings are distributed across statuses, when demand is highest, which cancellation categories are recorded, how results vary by vehicle and location, and how customer experience metrics vary. Results are descriptive and help identify areas for further investigation; they do not independently prove causes.
+## What's in this repo
+- `01_ola_uber_booking_analysis.sql` — full script: table setup, data load with cleaning, 9 validation checks, and 26 business-question queries across booking performance, cancellations, vehicle/location performance, booking value, ratings, and repeat customers.
+- `Ride_Analysis_Documentation.docx` — full write-up: what I did, problems I hit while loading the data, and the confirmed findings so far.
+
+## Dataset
+Ola & Uber Ride Booking & Cancellation Data (Kaggle), ~103,000 India-based ride bookings.
+
+## Status so far
+- Data loaded and validated: 103,024 rows, zero duplicate Booking_IDs, unique constraint added.
+- Booking outcome breakdown confirmed:
+  - Success: 63,967 (62.09%)
+  - Canceled by Driver: 18,434 (17.89%)
+  - Canceled by Customer: 10,499 (10.19%)
+  - Driver Not Found: 10,124 (9.83%)
+- Remaining business-question queries (cancellation reasons, vehicle/location performance, booking value, ratings, repeat customers) are written and ready to run; findings to be added as I go.
 
 ## Tools
-- MySQL Workbench
-- Power BI
-- GitHub
+MySQL, Excel, Power BI (dashboard in progress).
 
-## Analysis Workflow
-1. Load the CSV data into MySQL.
-2. Validate row counts, duplicate booking IDs, missing values, status values, and date coverage.
-3. Analyse booking outcomes and time trends.
-4. Examine cancellations and incomplete rides.
-5. Compare vehicle types, pickup/drop locations, and common routes.
-6. Analyse recorded booking value, payment methods, and ride distance.
-7. Compare customer/driver ratings and turnaround-time fields.
-8. Calculate repeat booking within the dataset period.
-9. Build a Power BI dashboard.
+(Used Claude AI as a guide while writing and debugging the SQL — the questions, analysis, and findings are my own work.)
 
-## Key Findings
-Complete this section only after reviewing actual query outputs:
-- Total bookings: [insert actual result]
-- Successful booking rate: [insert actual result]
-- Most common booking status: [insert actual result]
-- Most common cancellation category: [insert actual result]
-- Most frequently booked vehicle type: [insert actual result]
-- Most common pickup location: [insert actual result]
-- Average customer rating: [insert actual result]
-- Repeat customer percentage: [insert actual result]
-
-## Limitations
-- Recorded booking value is not necessarily collected revenue or profit.
-- NULL ratings and turnaround-time fields affect the available sample size.
-- Status-based cancellation rates count only statuses defined in the SQL query.
-- Repeat booking is measured only within the dataset's date range.
-- Observed patterns do not establish causation.
-
-## Repository Structure
-```text
-ola-uber-booking-analysis/
-├── README.md
-├── sql/
-│   └── 01_ola_uber_booking_analysis.sql
-├── powerbi/
-│   └── ola_uber_analysis.pbix
-└── screenshots/
-    └── dashboard.png
-```
-
-## Author
-Rahul Ballidav — Aspiring Data Analyst
 
