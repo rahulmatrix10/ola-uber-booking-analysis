@@ -24,3 +24,9 @@ MySQL, Excel, Power BI (dashboard in progress).
 (Used Claude AI as a guide while writing and debugging the SQL — the questions, analysis, and findings are my own work.)
 
 
+ ##  ![Dashboard](dashboard.png)
+
+ The Power BI dashboard file (.pbix) exceeds GitHub's 25 MB file size limit and is not included in this repository. A screenshot of the visual report is provided above for reference.
+ 
+   
+
